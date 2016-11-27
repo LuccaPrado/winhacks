@@ -39,13 +39,13 @@ func main() {
 			fmt.Println("--deepthaw = try to thaw deepfreeze")
 			fmt.Println("--normalfreeze = try to reverse operation deepthaw")
 		} else if option == "--admin" {
-      admin()
+			admin()
 		} else if option == "--normaluser" {
-      normaluser()
+			normaluser()
 		} else if option == "--deepthaw" {
-      deepthaw()
+			deepthaw()
 		} else if option == "--normalfreeze" {
-      normalfreeze()
+			normalfreeze()
 		} else {
 			fmt.Println("you don't entered an valid option, use --help to see options")
 			os.Exit(0)
@@ -61,48 +61,80 @@ func main() {
 	}
 }
 
-func admin()  {
-  winlocation := ""
-  right := ""
-fmt.Print("\033[H\033[2J")
-fmt.Println("you chose the admin function, lets start :3")
-fmt.Println("first, where is your windows mounted(with ending slash too):  ")
-fmt.Scanln(&winlocation)
-fmt.Println("ok, windows location is", winlocation)
-winlocationsys := winlocation + "Windows/System32/"
-fmt.Println("so, system32 is on", winlocationsys, "Right?(Y/N)")
-fmt.Scanln(&right)
-if (right == "Y"||right == "y") {
-fmt.Println("ok, let's do this")
-os.Rename(winlocationsys+"Magnify.exe", winlocationsys+"Magnify.old")
-os.Rename(winlocationsys+"cmd.exe", winlocationsys+"Magnify.exe")
+func admin() {
+	winlocation := ""
+	right := ""
+	fmt.Print("\033[H\033[2J")
+	fmt.Println("you chose the admin function, lets start :3")
+	fmt.Println("first, where is your windows mounted(with ending slash too):  ")
+	fmt.Scanln(&winlocation)
+	fmt.Println("ok, windows location is", winlocation)
+	winlocationsys := winlocation + "Windows/System32/"
+	fmt.Println("so, system32 is on", winlocationsys, "Right?(Y/N)")
+	fmt.Scanln(&right)
+	if right == "Y" || right == "y" {
+		fmt.Println("ok, let's do this")
+		os.Rename(winlocationsys+"Magnify.exe", winlocationsys+"Magnify.old")
+		os.Rename(winlocationsys+"cmd.exe", winlocationsys+"Magnify.exe")
 
-fmt.Println("all done, now you can start magnify hack on reboot")
-}else{
-  admin()
+		fmt.Println("all done, now you can start magnify hack on reboot")
+	} else {
+		admin()
+	}
 }
+func normaluser() {
+	winlocation := ""
+	right := ""
+	fmt.Print("\033[H\033[2J")
+	fmt.Println("you chose the admin function, lets start :3")
+	fmt.Println("first, where is your windows mounted(with ending slash too):  ")
+	fmt.Scanln(&winlocation)
+	fmt.Println("ok, windows location is", winlocation)
+	winlocationsys := winlocation + "Windows/System32/"
+	fmt.Println("so, system32 is on", winlocationsys, "Right?(Y/N)")
+	fmt.Scanln(&right)
+	if right == "Y" || right == "y" {
+		fmt.Println("ok, let's do this")
+		os.Rename(winlocationsys+"Magnify.exe", winlocationsys+"cmd.exe")
+		os.Rename(winlocationsys+"Magnify.old", winlocationsys+"Magnify.exe")
+		fmt.Println("all done, now you are with your computer normal again")
+	}
 }
-func normaluser()  {
-  winlocation := ""
-  right := ""
-fmt.Print("\033[H\033[2J")
-fmt.Println("you chose the admin function, lets start :3")
-fmt.Println("first, where is your windows mounted(with ending slash too):  ")
-fmt.Scanln(&winlocation)
-fmt.Println("ok, windows location is", winlocation)
-winlocationsys := winlocation + "Windows/System32/"
-fmt.Println("so, system32 is on", winlocationsys, "Right?(Y/N)")
-fmt.Scanln(&right)
-if (right == "Y"||right == "y") {
-fmt.Println("ok, let's do this")
-os.Rename(winlocationsys+"Magnify.exe", winlocationsys+"cmd.exe")
-os.Rename(winlocationsys+"Magnify.old", winlocationsys+"Magnify.exe")
-fmt.Println("all done, now you are with your computer normal again")
+func deepthaw() {
+	fmt.Print("\033[H\033[2J")
+	winlocation := ""
+	right := ""
+	fmt.Print("\033[H\033[2J")
+	fmt.Println("you chose the deepthaw function, lets start :3")
+	fmt.Println("first, where is your windows mounted(with ending slash too):  ")
+	fmt.Scanln(&winlocation)
+	fmt.Println("ok, windows location is", winlocation)
+	winlocationsys := winlocation + "Windows/System32/"
+	fmt.Println("so, system32 is on", winlocationsys, "Right?(Y/N)")
+	fmt.Scanln(&right)
+	if right == "Y" || right == "y" {
+		fmt.Println("ok, let's do this")
+		os.Rename(winlocationsys+"DeepFrz.sys", winlocationsys+"DeepFrz.sys.chloe")
+		os.Rename(winlocationsys+"ntfs.sys", winlocationsys+"DeepFrz.sys")
+		fmt.Println("all done, now you can use windows as thawed, just reboot")
+	}
 }
-}
-func deepthaw()  {
-fmt.Print("\033[H\033[2J")
-}
-func normalfreeze()  {
-fmt.Print("\033[H\033[2J")
+func normalfreeze() {
+	fmt.Print("\033[H\033[2J")
+	winlocation := ""
+	right := ""
+	fmt.Print("\033[H\033[2J")
+	fmt.Println("you chose the deepfreeze function, lets start :3")
+	fmt.Println("first, where is your windows mounted(with ending slash too):  ")
+	fmt.Scanln(&winlocation)
+	fmt.Println("ok, windows location is", winlocation)
+	winlocationsys := winlocation + "Windows/System32/"
+	fmt.Println("so, system32 is on", winlocationsys, "Right?(Y/N)")
+	fmt.Scanln(&right)
+	if right == "Y" || right == "y" {
+		fmt.Println("ok, let's do this")
+		os.Rename(winlocationsys+"DeepFrz.sys", winlocationsys+"ntfs.sys")
+		os.Rename(winlocationsys+"DeepFrz.sys.chloe", winlocationsys+"DeepFrz.sys")
+		fmt.Println("all done, now you are with your computer normal again")
+	}
 }
