@@ -1,4 +1,4 @@
-how to set an existing account to admin account
+how to set an existing account to admin account(or drop winhacks exe to system32)
 
 after using the --admin function and rebooting, open easyaccess tab before logon, select the Magnifier(ou a lupa PT-BR)
 and hit apply,
