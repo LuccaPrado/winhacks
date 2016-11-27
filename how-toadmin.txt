@@ -1,0 +1,9 @@
+how to set an existing account to admin account
+
+after using the --admin function and rebooting, open easyaccess tab before logon, select the Magnifier(ou a lupa PT-BR)
+and hit apply,
+now type this to get admin rights for username
+net localgroup Administrators username /add
+or PT-BR
+net localgroup Administradores username /add
+now, just reboot on live cd and run --normaluser and reboot on windows :3
