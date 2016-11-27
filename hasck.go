@@ -22,7 +22,7 @@ package main
 import (
 	"fmt"
 	"os"
-  "os/exec"
+	"os/exec"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 			fmt.Println("--normaluser = try to reverse operation admin hack")
 			fmt.Println("--deepthaw = try to thaw deepfreeze")
 			fmt.Println("--normalfreeze = try to reverse operation deepthaw")
-      fmt.Println("--adminuser = add specified user to admin")
+			fmt.Println("--adminuser = add specified user to admin")
 		} else if option == "--admin" {
 			admin()
 		} else if option == "--normaluser" {
@@ -49,7 +49,7 @@ func main() {
 		} else if option == "--normalfreeze" {
 			normalfreeze()
 		} else if option == "--adminuser" {
-		    adminuser()
+			adminuser()
 		} else {
 			fmt.Println("you don't entered an valid option, use --help to see options")
 			os.Exit(0)
@@ -141,18 +141,18 @@ func normalfreeze() {
 		os.Rename(winlocationsys+"DeepFrz.sys.chloe", winlocationsys+"DeepFrz.sys")
 		fmt.Println("all done, now you are with your computer normal again")
 	}
-  func adminuser()  {
-    admin := ""
-    user := ""
-    fmt.Println("please, insert the admin (or other) localgroup name")
-    fmt.Scanln(&admin)
-    fmt.Println("please, insert the username")
-    fmt.Scanln(&user)
-    c, err := exec.Command("net", "localgroup", admin, user, "/add")
-    c.run()
-    if err != nil {
+}
+func adminuser() {
+	admin := ""
+	user := ""
+	fmt.Println("please, insert the admin (or other) localgroup name")
+	fmt.Scanln(&admin)
+	fmt.Println("please, insert the username")
+	fmt.Scanln(&user)
+	c, err := exec.Command("net", "localgroup", admin, user, "/add")
+	c.run()
+	if err != nil {
 
-      fmt.Println(falhei)
-    }
-  }
+		fmt.Println(falhei)
+	}
 }
