@@ -44,11 +44,11 @@ func main() {
 			admin()
 		} else if option == "--normaluser" {
 			normaluser()
-		} else if option == "--deepthaw" {
+		/*} else if option == "--deepthaw" {
 			deepthaw()
 		} else if option == "--normalfreeze" {
 			normalfreeze()
-		} else if option == "--adminuser" {
+		*/} else if option == "--adminuser" { //used only on windows build
 			adminuser()
 		} else {
 			fmt.Println("you don't entered an valid option, use --help to see options")
@@ -104,7 +104,7 @@ func normaluser() {
 		fmt.Println("all done, now you are with your computer normal again")
 	}
 }
-func deepthaw() {
+/*func deepthaw() {
 	fmt.Print("\033[H\033[2J")
 	winlocation := ""
 	right := ""
@@ -141,7 +141,7 @@ func normalfreeze() {
 		os.Rename(winlocationsys+"DeepFrz.sys.chloe", winlocationsys+"DeepFrz.sys")
 		fmt.Println("all done, now you are with your computer normal again")
 	}
-}
+}*/
 func adminuser() {
 	admin := ""
 	user := ""
