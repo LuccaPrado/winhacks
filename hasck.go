@@ -149,10 +149,7 @@ func adminuser() {
 	fmt.Scanln(&admin)
 	fmt.Println("please, insert the username")
 	fmt.Scanln(&user)
-	c, err := exec.Command("net", "localgroup", admin, user, "/add")
-	c.run()
-	if err != nil {
+	c := exec.Command("net", "localgroup", admin, user, "/add")
+	c.Run()
 
-		fmt.Println(falhei)
-	}
 }

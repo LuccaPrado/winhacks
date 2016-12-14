@@ -1,5 +1,5 @@
 # winhacks
-An program for live cd to modify some windows configs, using magnifier hack and thawing deep freeze
+An program for live cd to modify some windows configs, using magnifier hack and thawing deep freeze(7.20)
 
 some good links:
 
