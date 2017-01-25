@@ -44,11 +44,11 @@ func main() {
 			admin()
 		} else if option == "--normaluser" {
 			normaluser()
-		/*} else if option == "--deepthaw" {
+		} else if option == "--deepthaw" {
 			deepthaw()
 		} else if option == "--normalfreeze" {
 			normalfreeze()
-		*/} else if option == "--adminuser" { //used only on windows build
+		} else if option == "--adminuser" { //used only on windows build
 			adminuser()
 		} else {
 			fmt.Println("you don't entered an valid option, use --help to see options")
@@ -104,7 +104,7 @@ func normaluser() {
 		fmt.Println("all done, now you are with your computer normal again")
 	}
 }
-/*func deepthaw() {
+func deepthaw() {
 	fmt.Print("\033[H\033[2J")
 	winlocation := ""
 	right := ""
@@ -118,8 +118,11 @@ func normaluser() {
 	fmt.Scanln(&right)
 	if right == "Y" || right == "y" {
 		fmt.Println("ok, let's do this")
-		os.Rename(winlocationsys+"DeepFrz.sys", winlocationsys+"DeepFrz.sys.chloe")
-		os.Rename(winlocationsys+"ntfs.sys", winlocationsys+"DeepFrz.sys")
+		os.Rename(winlocationsys+"\\drivers\\DeepFrz.sys", winlocationsys+"\\drivers\\DeepFrz.sys.chloe")
+		os.Rename(winlocationsys+"\\drivers\\DFFilter.sys", winlocationsys+"\\drivers\\DFFilter.sys.chloe")
+		os.Rename(winlocationsys+"\\drivers\\DfDiskLo.sys", winlocationsys+"\\drivers\\DfDiskLo.sys.chloe")
+		os.Rename(winlocationsys+"\\drivers\\FarDisk.sys", winlocationsys+"\\drivers\\FarDisk.sys.chloe")
+		os.Rename(winlocationsys+"\\drivers\\DfDiskLo.sys", winlocationsys+"\\drivers\\FarSpace.sys.chloe")
 		fmt.Println("all done, now you can use windows as thawed, just reboot")
 	}
 }
@@ -137,11 +140,14 @@ func normalfreeze() {
 	fmt.Scanln(&right)
 	if right == "Y" || right == "y" {
 		fmt.Println("ok, let's do this")
-		os.Rename(winlocationsys+"DeepFrz.sys", winlocationsys+"ntfs.sys")
-		os.Rename(winlocationsys+"DeepFrz.sys.chloe", winlocationsys+"DeepFrz.sys")
+		os.Rename(winlocationsys+"\\drivers\\DeepFrz.sys.chloe", winlocationsys+"\\drivers\\DeepFrz.sys")
+		os.Rename(winlocationsys+"\\drivers\\DFFilter.sys.chloe", winlocationsys+"\\drivers\\DFFilter.sys")
+		os.Rename(winlocationsys+"\\drivers\\DfDiskLo.sys.chloe", winlocationsys+"\\drivers\\DfDiskLo.sys")
+		os.Rename(winlocationsys+"\\drivers\\FarDisk.sys.chloe", winlocationsys+"\\drivers\\FarDisk.sys")
+		os.Rename(winlocationsys+"\\drivers\\DfDiskLo.sys.chloe", winlocationsys+"\\drivers\\FarSpace.sys")
 		fmt.Println("all done, now you are with your computer normal again")
 	}
-}*/
+}
 func adminuser() {
 	admin := ""
 	user := ""
